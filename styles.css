@@ -1,0 +1,148 @@
+:root {
+  --primary-bg: hsl(222, 26%, 31%);
+  --secondary-bg: hsl(223, 31%, 20%);
+
+  --primary-btn: hsl(30, 25%, 89%);
+  --primary-shw: hsl(28, 16%, 65%);
+
+  --secondary-btn: hsl(225, 21%, 49%);
+  --secondary-shw: hsl(224, 28%, 35%);
+
+  --detail-btn: hsl(6, 63%, 50%);
+  --detail-shw: hsl(6, 70%, 34%);
+
+  --main-text: white;
+  --buttonText: hsl(221, 14%, 31%);
+}
+
+html, 
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'League Spartan', sans-serif;
+}
+
+/* TEXT */
+h1 {
+  text-align: left;
+  font-size: 2.5rem;
+  margin: unset;
+  color: var(--main-text);
+  width: 100%;
+}
+
+p {
+	margin: unset;
+	width: fit-content;
+	height: fit-content;
+}
+
+/* CONTAINERS */
+body {
+  height: 100vh;
+  background-color: var(--primary-bg);
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: clamp(375px, 100%, 375px);
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--primary-bg);
+}
+
+.display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--main-text);
+}
+
+.display p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.display > p:last-child {
+  font-size: 3rem;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.keyboard button:nth-last-child(-n+2) {
+  grid-column: span 2;
+  aspect-ratio: 7 / 3;
+}
+
+.box {
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--secondary-bg);
+}
+
+/* BUTTONS */
+.bttn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 8px;
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--buttonText);
+  cursor: pointer;
+  outline: none;
+
+  background-color: var(--primary-btn);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px var(--primary-shw);
+  text-transform: uppercase;
+}
+
+.bttn:active {
+  box-shadow: 0 3px var(--primary-shw);
+  transform: translateY(2px);
+}
+
+.bttn--secondary {
+  background-color: var(--secondary-btn); 
+  box-shadow: 0 6px var(--secondary-shw);
+  color: white;
+  font-size: 20px;
+}
+
+.bttn--secondary:active {
+  box-shadow: 0 3px var(--secondary-shw);
+}
+
+.bttn--detail {
+  background-color: var(--detail-btn); 
+  box-shadow: 0 6px var(--detail-shw);
+  color: white;
+  font-size: 20px;
+}
+
+.bttn--detail:active {
+  box-shadow: 0 3px var(--detail-shw);
+}
