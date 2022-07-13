@@ -1,8 +1,8 @@
 var math = {
-	'+': (a, b) => (Number(a) + Number(b)).toString(),
-	'-': (a, b) => (Number(a) - Number(b)).toString(),
-	'x': (a, b) => (Number(a) * Number(b)).toString(),
-	'/': (a, b) => (Number(a) / Number(b)).toString(),
+  '+': (a, b) => (Number(a) + Number(b)).toString(),
+  '-': (a, b) => (Number(a) - Number(b)).toString(),
+  'x': (a, b) => (Number(a) * Number(b)).toString(),
+  '/': (a, b) => (Number(a) / Number(b)).toString(),
 }
 
 var state = { prev: '', main: '', op: '' }
@@ -16,7 +16,7 @@ var actions = {
     const { prev, main, op } = state
     if (!main) return;
     if (op && prev) {
-      state.prev = math[op](prev, main)
+      state = { prev: math[op](prev, main), main: '0', op: payload }
       return;
     }
 
